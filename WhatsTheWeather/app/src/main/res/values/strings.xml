@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Whats The Weather</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--<string name="switchAutoSetList">Ajouter automatiquement la ville à la liste des villes lorsque vous appuyez sur le bouton RECHERCHER.</string>-->
+    <string name="switchAutoSetList">Automatically add searched city to my list</string>
+    <!--<string name="switchWorker">Recevoir des notifications récurrentes sur la météo de la ville de votre choix (à choisir depuis la liste).</string>-->
+    <string name="switchWorker">Receive notifications about the weather in one of my saved cities</string>
+</resources>

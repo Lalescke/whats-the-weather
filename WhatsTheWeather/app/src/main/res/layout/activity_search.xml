@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SearchActivity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/searchActivityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEARCH A CITY"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/textCitySearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:hint="Research a city ..."
+        android:inputType="text"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchActivityTitle"/>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textCitySearch"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textCitySearch"
+            android:orientation="horizontal"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+            <Button
+                android:id="@+id/setCitiesListFromSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="ADD TO LIST"
+                app:layout_constraintTop_toBottomOf="@+id/textCitySearch"
+                app:layout_constraintEnd_toStartOf="@+id/startSearch"/>
+            <Button
+                android:id="@+id/startSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="SEARCH"
+                app:layout_constraintTop_toBottomOf="@+id/textCitySearch"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/geolocationSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="FROM YOUR POSITION"
+            app:layout_constraintTop_toBottomOf="@+id/startSearch"
+            app:layout_constraintEnd_toStartOf="@+id/startSearch"/>
+    </LinearLayout>
+
+    <!-- ICI: bouton setCitiesList -->
+
+    <Switch
+        android:id="@+id/switchAutoSetList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/switchAutoSetList"
+        android:textSize="16sp"
+        android:layout_marginTop="90dp"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLayout"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml"/>
+
+    <Switch
+        android:id="@+id/switchWorker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/switchWorker"
+        android:textSize="16sp"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/switchAutoSetList"
+        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml"/>
+
+    <TextView
+        android:id="@+id/weatherApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered by WeatherAPI.com"
+        android:textSize="10sp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewList" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewList"
+        android:layout_width="match_parent"
+        android:background="@drawable/background_bar"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:itemIconTint="@color/bottom_nav_color"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
